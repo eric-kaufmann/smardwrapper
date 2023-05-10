@@ -2,10 +2,10 @@
 
 A (better) python wrapper for [SMARD API](https://smard.api.bund.dev/).
 
-## Install
+## Installation
 
 Install python package via pip:
-```
+```shell
 pip install "git+https://github.com/eric-kaufmann/smardwrapper.git"
 ```
 
@@ -25,7 +25,7 @@ get_energy_data(
 
 ### Input Values
 
-- **filter_number:**
+- **filter_number:** (type: *int* or *list[int]*)
 
 | filter number | description                                      |
 |:-------------:|--------------------------------------------------|
@@ -67,7 +67,7 @@ get_energy_data(
 |     5097      | Prognostizierte Erzeugung: Wind und Photovoltaik |
 |      122      | Prognostizierte Erzeugung: Gesamt                |
 
-- **region**
+- **region** (type: *str* or *list[str]*)
 
 |   region   | description                            |
 |:----------:|----------------------------------------|
@@ -83,7 +83,7 @@ get_energy_data(
 |    APG     | SRegelzone (AT): APG                   |
 |   Creos    | Regelzone (LU): Creos                  |
 
-- **resolution**
+- **resolution** (type: *str*)
 
   - *hour*
   - *quarterhour*
@@ -95,7 +95,7 @@ get_energy_data(
 
 ### Output
 
-type: pd.DataFrame
+**type:** *pd.DataFrame*
 
 |   | filter | region | timestamp           | value   |
 |---|--------|--------|---------------------|---------|
@@ -109,21 +109,22 @@ type: pd.DataFrame
 ```python
 from smardwrapper import pysmard as api
 
-api.get_energy_data(
+result_df = api.get_energy_data(
     filter_number=[1223, 1224, 1225],
     region='DE',
     resolution='hour',
     start_datetime="2020-01-01",
     end_datetime="2020-02-01"
 )
+print(result_df)
 ```
-*OUT:*
+*Out:*
 
-|     | filter | region | timestamp              | value   |
-|-----|--------|--------|------------------------|---------|
-| 1   | 1223   | DE     | DE 2020-01-01 00:00:00 | 9419.00 |
-| 2   | 1223   | DE     | DE 2020-01-01 01:00:00 | 9425.75 |
-| 3   | 1223   | DE     | DE 2020-01-01 02:00:00 | 9497.25 |
-| 4   | 1223   | DE     | DE 2020-01-01 03:00:00 | 9549.75 |
-| 5   | 1223   | DE     | DE 2020-01-01 04:00:00 | 9466.75 |
-| ... | ...    | ...    | ...                    | ...     |
+|     | filter | region | timestamp           | value   |
+|-----|--------|--------|---------------------|---------|
+| 1   | 1223   | DE     | 2020-01-01 00:00:00 | 9419.00 |
+| 2   | 1223   | DE     | 2020-01-01 01:00:00 | 9425.75 |
+| 3   | 1223   | DE     | 2020-01-01 02:00:00 | 9497.25 |
+| 4   | 1223   | DE     | 2020-01-01 03:00:00 | 9549.75 |
+| 5   | 1223   | DE     | 2020-01-01 04:00:00 | 9466.75 |
+| ... | ...    | ...    | ...                 | ...     |
