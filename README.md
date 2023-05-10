@@ -25,7 +25,7 @@ get_energy_data(
 
 ### Input Values
 
-The parameter *filter_number* 
+- **filter_number:**
 
 | filter number | description                                      |
 |:-------------:|--------------------------------------------------|
@@ -66,6 +66,32 @@ The parameter *filter_number*
 |      715      | Prognostizierte Erzeugung: Sonstige              |
 |     5097      | Prognostizierte Erzeugung: Wind und Photovoltaik |
 |      122      | Prognostizierte Erzeugung: Gesamt                |
+
+- **region**
+
+|   region   | description                            |
+|:----------:|----------------------------------------|
+|     DE     | Land: Deutschland                      |
+|     AT     | Land: Österreich                       |
+|     LU     | Land: Luxemburg                        |
+|   DE-LU    | Marktgebiet: DE/LU (ab 01.10.2018)     |
+|  DE-AT-LU  | Marktgebiet: DE/AT/LU (bis 30.09.2018) |
+|  50Hertz   | Regelzone (DE): 50Hertz                |
+|  Amprion   | Regelzone (DE): Amprion                |
+|   TenneT   | Regelzone (DE): TenneT                 |
+| TransnetBW | Regelzone (DE): TransnetBW             |
+|    APG     | SRegelzone (AT): APG                   |
+|   Creos    | Regelzone (LU): Creos                  |
+
+- **resolution**
+
+  - *hour*
+  - *quarterhour*
+  - *day*
+  - *week*
+  - *month*
+  - *year*
+
 
 ### Output
 
