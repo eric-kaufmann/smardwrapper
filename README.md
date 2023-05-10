@@ -4,6 +4,10 @@ A (better) python wrapper for [SMARD API](https://smard.api.bund.dev/).
 
 ## Install
 
+Install python package via pip:
+```
+pip install "git+https://github.com/eric-kaufmann/smardwrapper.git
+```
 
 ## Usage
 
